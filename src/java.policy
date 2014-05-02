@@ -1,0 +1,8 @@
+grant {
+    permission java.net.SocketPermission "*:1024-65535",
+        "connect,accept";
+    permission java.net.SocketPermission "*:80", "connect";
+    permission java.io.FilePermission
+    
+	"/Users/vladh/Documents/02_Documents/3rd_year/Web_Applications_and_Services/assignment/SharePortfolio/-", "read";
+};

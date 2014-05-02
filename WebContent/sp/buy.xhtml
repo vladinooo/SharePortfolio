@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+	  
+	  <h:head>
+	  	<title>Buy Shares</title>
+	  	
+	  	<link href="../style.css" rel="stylesheet" type="text/css" />
+	  	
+	  </h:head>
+	  
+	  <h:body>
+	  
+	  <center>
+	  
+	  	<h:form>
+	  		<br /><br />
+	  		
+		  	<div id="NavHorMenu">
+		       <ul>
+		        <li><h:outputLink value="statement.jsf">Statement</h:outputLink></li>
+		        <li><h:outputLink value="buy.jsf">Buy</h:outputLink></li>
+		        <li><h:outputLink value="sell.jsf">Sell</h:outputLink></li>
+		        <li><h:outputLink value="pastorders.jsf">Past Orders</h:outputLink></li>
+		       </ul>
+		     </div>
+		     
+		     <br />
+		     
+		    <h3>Buy Shares</h3>
+	  		<br />
+				
+	  		<div id="tableBorder">
+		  		<table width="100%">
+					<tr>
+						<td class="tableHead" colspan="2"><p>Select Company:</p></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<h:selectOneMenu value="#{buyShares.shareCompany}">
+		            			<f:selectItems value="#{buyShares.options}" />
+		       				</h:selectOneMenu>
+		       				<h:commandButton value="Select" action="#{buyShares.__getPrice}"/>
+		       				<p class="errorMsg"><h:outputText value="#{buyShares.selectCompanyErrorMsg}"/></p><i style="font-size: 12px;"> (press to get current price)</i>
+		       			</td>
+					</tr>
+					<tr>
+						<td class="tableFooter" width="200"><p>Price for 1 unit of share:</p></td>
+						<td class="tableFooter"><p>&#36; <h:outputText value="#{buyShares.shareUnitPrice}"/></p></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="right" class="tableFooterBuy"><h:commandButton value="Next" action="#{buyShares.next}"/></td>
+					</tr>
+				</table>
+			</div>
+	  	
+	  	</h:form>
+	  	
+	  	</center>
+	  	
+	  </h:body>
+	  
+	  
+</html>

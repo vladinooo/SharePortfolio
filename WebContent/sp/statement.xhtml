@@ -1,0 +1,103 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+	  
+	  <h:head>
+	  	<title>Statement</title>
+	  	
+	  	<link href="../style.css" rel="stylesheet" type="text/css" />
+	  	
+	  </h:head>
+	  
+	  <h:body>
+	  
+	  <center>
+	  
+	  	<h:form>
+	  		<br /><br />
+	  		
+		  	<div id="NavHorMenu">
+		       <ul>
+		        <li><h:outputLink value="statement.jsf">Statement</h:outputLink></li>
+		        <li><h:outputLink value="buy.jsf">Buy</h:outputLink></li>
+		        <li><h:outputLink value="sell.jsf">Sell</h:outputLink></li>
+		        <li><h:outputLink value="pastorders.jsf">Past Orders</h:outputLink></li>		        
+		       </ul>
+		     </div>
+		     
+		     <br />
+		     
+		    <h3>Statement</h3>
+	  		<br />
+			
+			<div id="statementTableBorder">
+	  		<table width="100%">
+	  			<tr>
+	  				<td align="left"><p>List by company: 
+	  					<h:selectOneMenu value="#{statement.shareCompany}">
+		            		<f:selectItems value="#{statement.options}" />
+		       				</h:selectOneMenu>
+	       				<h:commandButton value="Select" action="#{statement.getSharesByCompany()}"/>
+	       				<i style="font-size: 12px; font-style: italic;"> (-- for all) (press to get current price)</i></p>
+	  				</td>
+	  			</tr>
+	  		</table>
+		  		<h:dataTable value="#{statement.allShares}"
+		  		var="_shares"
+		  		styleClass="dataTable"
+    			headerClass="dataTable-header"
+    			rowClasses="order-table-odd-row,dataTable-even-row"
+    			cellspacing="0"
+    			cellpadding="0"
+    			border="0">
+	 
+	 
+	    			<h:column>
+	    				<f:facet name="header">Company</f:facet>
+	    				#{_shares.company}
+	    			</h:column>
+	    			
+	    			<h:column style="width: 200; colour: #fff;">
+	    				<f:facet name="header">Share Unit Price</f:facet>
+	    				<p>&#36; #{_shares.unitPrice}</p>
+	    			</h:column>
+	 
+	    			<h:column>
+	    				<f:facet name="header">Amount</f:facet>
+	    				#{_shares.sharesAmount}
+	    			</h:column>
+	    			
+	    			<h:column>
+	    				<f:facet name="header">Value</f:facet>
+	    				<p>&#36; #{_shares.sharesValue}</p>
+	    			</h:column>
+	    					
+	    		</h:dataTable>
+			</div>
+			
+			<div id="statementFooter">
+	  			<table width="100%">
+	  				<tr>
+	  					<td width="440">
+	  						<p style="font-weight: bold;" align="right">Total:</p>
+	  					</td>
+	  					<td>
+	  						<p align="left" style="font-weight: bold;">&#36;  <h:outputText value="#{statement.totalSharesValue}"/></p>
+	  					</td>
+	  				</tr>
+	    		</table>
+    		</div>
+
+
+	  		
+	 
+	  	
+	  	</h:form>
+	  	
+	  	</center>
+	  	
+	  </h:body>
+	  
+	  
+</html>

@@ -1,0 +1,60 @@
+<entity-mappings
+	xmlns="http://www.eclipse.org/eclipselink/xsds/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	version="2.1">
+	
+
+	<entity class="sp.sharetransaction.domain.ShareTransaction">
+		<named-query name="listAllTransactions">
+			<query>
+				SELECT shareTransaction FROM ShareTransaction shareTransaction
+				ORDER BY shareTransaction.date ASC
+			</query>
+		</named-query>
+	</entity>
+	
+	<entity class="sp.sharetransaction.domain.ShareTransaction">
+		<named-query name="listSelectedTransactions">
+			<query>
+				SELECT shareTransaction FROM ShareTransaction shareTransaction WHERE shareTransaction.company= :name
+				ORDER BY shareTransaction.date ASC
+			</query>
+		</named-query>
+	</entity>
+	
+	
+	<!-- Shares -->
+	
+	<entity class="sp.sharetransaction.domain.Shares">
+		<named-query name="getSharesCompanyId">
+			<query>
+				SELECT shares FROM Shares shares WHERE shares.company= :name
+			</query>
+		</named-query>
+	</entity>
+	
+	<entity class="sp.sharetransaction.domain.Shares">
+		<named-query name="getNumberOfRows">
+			<query>
+				SELECT count(shares) FROM Shares shares
+			</query>
+		</named-query>
+	</entity>
+	
+	<entity class="sp.sharetransaction.domain.Shares">
+		<named-query name="listAllShares">
+			<query>
+				SELECT shares FROM Shares shares
+			</query>
+		</named-query>
+	</entity>
+	
+	<entity class="sp.sharetransaction.domain.Shares">
+		<named-query name="listSelectedShares">
+			<query>
+				SELECT shares FROM Shares shares WHERE shares.company= :name
+			</query>
+		</named-query>
+	</entity>
+	
+</entity-mappings>

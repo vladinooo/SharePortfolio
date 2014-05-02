@@ -1,0 +1,142 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	font-family:Arial, Helvetica, sans-serif;
+	}
+	
+table {
+	background-color:#C5FFD0;
+	padding: 0;
+	margin: 0;
+	}
+
+#tableBorder {
+	width: 600px;
+	border: 2px solid #B7ECC0;
+}
+
+#statementTableBorder {
+	width: 600px;
+	border-right: 2px solid #B7ECC0;
+	border-left: 2px solid #B7ECC0;
+	border-top: 2px solid #B7ECC0;
+}
+
+.tableHead {
+	background-color:#B7ECC0;
+}
+
+.tableFooter {
+	background-color:#B7ECC0;
+}
+
+.tableFooterBuy {
+	background-color:#B7ECC0;
+	height: 50px;
+}
+
+td {
+	padding: 5px;
+	margin: 0;
+	}
+
+	
+p {
+	margin: 0;
+	padding: 5px;
+	font-size: 12px;
+}
+
+#tableBorder .navigation {
+	background-color: #B7ECC0;
+	font-size: 12px;
+	padding: 2px;
+	text-align: center;
+}
+
+#NavHorMenu {
+	background-color: #B7ECC0;
+	height: 20px;
+	width: 600px;
+	text-align: center;
+	border: 2px solid #B7ECC0;
+
+}
+
+#NavHorMenu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#NavHorMenu li {
+	float: left;
+	}
+	
+#NavHorMenu li a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-indent: -1000em;
+	margin-left: 33px;
+	margin-right: 33px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-decoration: none;
+	color: #000;
+	}
+
+#NavHorMenu li a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-indent: -1000em;
+	margin-left: 33px;
+	margin-right: 33px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-decoration: underline;
+	color: #000;
+	}
+	
+.errorMsg {
+	color: red;
+	display: inline;
+	font-weight: bold;
+}
+
+.dataTable {   
+	width: 100%;
+	text-align: left;
+	font-size: 12px;
+	background-color:#C5FFD0;
+}
+
+.dataTable-header {
+	text-align: left;
+	background:none repeat scroll 0 0 #B7ECC0;
+	border-bottom:1px solid #000;
+	padding:10px;
+}
+
+.dataTable-odd-row {
+	text-align: left;
+	padding: 10px 2px 10px 2px;
+	background:none repeat scroll 0 0 #FFFFFFF;
+}
+
+.dataTable-even-row {
+	text-align: left;
+	padding: 10px 2px 10px 2px;
+	background:none repeat scroll 0 0 #B7ECC0;
+}
+
+#statementFooter {
+	width: 600px;
+	border-right: 2px solid #B7ECC0;
+	border-left: 2px solid #B7ECC0;
+	border-bottom: 2px solid #B7ECC0;
+	border-top: 1px solid #000;
+}
+
+#pastOrdersFooter {
+	width: 600px;
+}

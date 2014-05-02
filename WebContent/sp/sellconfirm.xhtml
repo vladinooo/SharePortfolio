@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+	  
+	  <h:head>
+	  	<title>Sell Shares - Confirmation</title>
+	  	
+	  	<link href="../style.css" rel="stylesheet" type="text/css" />
+	  	
+	  </h:head>
+	  
+	  <h:body>
+	  
+	  <center>
+	  
+	  	<h:form>
+	  		<br /><br />
+	  		
+		  	<div id="NavHorMenu">
+		       <ul>
+		        <li><h:outputLink value="statement.jsf">Statement</h:outputLink></li>
+		        <li><h:outputLink value="buy.jsf">Buy</h:outputLink></li>
+		        <li><h:outputLink value="sell.jsf">Sell</h:outputLink></li>
+		        <li><h:outputLink value="pastorders.jsf">Past Orders</h:outputLink></li>
+		       </ul>
+		     </div>
+		     
+		     <br />
+		     
+		    <h3>Sell Shares</h3>
+	  		<br />
+			
+			<div id="tableBorder">
+				<table width="100%">
+					<tr>
+						<td colspan="4" class="tableHead"><p>Summary:</p></td>
+					</tr>
+					<tr style="font-weight: bold;">
+						<td align="center"><p>Company</p></td>
+						<td align="center"><p>Share Unit Price</p></td>
+						<td align="center"><p>Amount</p></td>
+						<td align="center"><p>Value</p></td>
+					</tr>
+					<tr>
+						<td align="center"><p><h:outputText value="#{sellShares.shareCompany}"/></p></td>
+						<td align="center"><p>&#36; <h:outputText value="#{sellShares.shareUnitPrice}"/></p></td>
+						<td align="center"><p><h:outputText value="#{sellShares.sharesAmountOrValue}"/></p></td>
+						<td align="center"><p>&#36; <h:outputText value="#{sellShares.sharesSoldPriceTotal}"/></p></td>
+					</tr>
+					<tr>
+						<td colspan="4" align="right" class="tableFooterBuy"><h:commandButton value="Confirm" action="#{sellShares.confirm}"/></td>
+					</tr>
+				</table>
+			</div>
+
+
+	  		
+	 
+	  	
+	  	</h:form>
+	  	
+	  	</center>
+	  	
+	  </h:body>
+	  
+	  
+</html>

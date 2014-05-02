@@ -1,0 +1,103 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+	  
+	  <h:head>
+	  	<title>Sell Shares - Select amount or value</title>
+	  	
+	  	<link href="../style.css" rel="stylesheet" type="text/css" />
+	  	
+	  </h:head>
+	  
+	  <h:body>
+	  
+	  <center>
+	  
+	  	<h:form>
+	  		<br /><br />
+	  		
+		  	<div id="NavHorMenu">
+		       <ul>
+		        <li><h:outputLink value="statement.jsf">Statement</h:outputLink></li>
+		        <li><h:outputLink value="buy.jsf">Buy</h:outputLink></li>
+		        <li><h:outputLink value="sell.jsf">Sell</h:outputLink></li>
+		        <li><h:outputLink value="pastorders.jsf">Past Orders</h:outputLink></li>
+		       </ul>
+		     </div>
+		     
+		     <br />
+		     
+		    <h3>Sell Shares</h3>
+	  		<br />
+				
+			<div id="tableBorder">
+				<table width="100%">
+					<tr>
+						<td colspan="3" class="tableHead">
+						<p align="center">Select amount or value:</p>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" align="center">
+							<h:selectOneMenu value="#{sellShares.amount_value_option}">
+		            			<f:selectItems value="#{sellShares.amountValueOptions}" />
+		       				</h:selectOneMenu>
+		       				<h:commandButton value="Select" action="#{sellShares.selectAmountOrValue}"/>
+		       				<br /><br />
+						</td>
+					</tr>
+					<tr>
+						<td align="center">
+							<p>Amount: (1 - <h:outputText value="#{sellShares.sharesAmount}"/> )</p>
+							<h:inputText id="amount"
+							value="#{sellShares.sharesAmountInput}"
+							readonly="#{sellShares.amountTxtBox}"
+							requiredMessage="#{sellShares.emptyTxtFieldErrorMsg}"
+							converterMessage="#{sellShares.emptyTxtFieldErrorMsg}"
+							validatorMessage="#{sellShares.emptyTxtFieldErrorMsg}" required="true">
+							<f:validateLength minimum="0" maximum="5000"/>
+							</h:inputText>
+						</td>
+						<td width="50" align="center">
+							<p>or</p>
+						</td>
+						<td align="center">
+							<p>Value: (0.1 - <h:outputText value="#{sellShares.sharesValue}"/> )</p>
+							<p style="display: inline;">&#36; </p><h:inputText id ="value"
+							value="#{sellShares.sharesValueInput}"
+							readonly="#{sellShares.valueTxtBox}"
+							requiredMessage="#{sellShares.emptyTxtFieldErrorMsg}"
+							converterMessage="#{sellShares.emptyTxtFieldErrorMsg}"
+							validatorMessage="#{sellShares.emptyTxtFieldErrorMsg}" required="true">
+							<f:validateLength minimum="0" maximum="10000"/>
+							<h:message for="value" />
+							</h:inputText>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" height="40">
+							<h:message for="amount" style="color: red; font-size: 12px; font-style: italic"/>
+						</td>
+						<td></td>
+						<td align="center" height="40">
+							<h:message for="value" style="color: red; font-size: 12px; font-style: italic"/>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" align="right" class="tableFooterBuy">
+							<p class="errorMsg"><h:outputText value="#{sellShares.amount_valueErrorMsg}"/></p>
+							<h:commandButton value="Sell" action="#{sellShares.sell}"/>
+						</td>
+					</tr>
+				</table>
+			</div>
+	  	
+	  	</h:form>
+	  	
+	  	</center>
+	  	
+	  </h:body>
+	  
+	  
+</html>
